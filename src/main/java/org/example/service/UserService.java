@@ -8,7 +8,11 @@ import java.util.List;
 
 public class UserService {
 
-    private final UserDao userDao = new UserDaoImpl();
+    private final UserDao userDao;
+
+    public UserService(UserDao userDao) {
+        this.userDao = userDao;
+    }
 
     public void createUser(String name, String email, Integer age) {
         User user = new User(name, email, age);

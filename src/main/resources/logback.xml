@@ -5,10 +5,10 @@
         </encoder>
     </appender>
 
-    <!-- Скрываем лишние логи Hibernate -->
+
     <logger name="org.hibernate" level="WARN"/>
 
-    <!-- Логи нашего приложения -->
+
     <logger name="org.example" level="DEBUG"/>
 
     <root level="WARN">

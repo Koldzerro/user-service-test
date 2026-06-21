@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.dao.UserDaoImpl;
 import org.example.entity.User;
 import org.example.service.UserService;
 import org.example.util.HibernateUtil;
@@ -8,7 +9,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static final UserService userService = new UserService();
+    private static final UserService userService = new UserService(new UserDaoImpl());
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -59,7 +60,7 @@ public class Main {
         scanner.nextLine();
         User user = userService.getUserById(id);
         if (user != null) {
-            System.out.println(use1r);
+            System.out.println(user);
         }
     }
 
